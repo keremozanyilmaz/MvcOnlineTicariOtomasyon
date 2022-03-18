@@ -25,6 +25,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public string EmployeeImage { get; set; }
 
         public ICollection<SalesMovement> SalesMovements { get; set; }
-        public Department Department { get; set; }
+        public int Departmentid { get; set; }
+        public virtual Department Department { get; set; }
     }
 }
