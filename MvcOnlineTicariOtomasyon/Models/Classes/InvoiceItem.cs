@@ -16,10 +16,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [StringLength(100)]
         public string InvoiceItemsExplanation { get; set; }
         public int InvoiceItemsQuantity { get; set; }
-        public decimal InvoiceItemsPrice { get; set; }
         public decimal InvoiceItemsUnitPrice { get; set; }
         public decimal InvoiceItemsAmount{ get; set; }
 
-        public Invoice Invoice { get; set; }
+        public int InvoiceID { get; set; }
+
+        public virtual Invoice Invoice { get; set; }
     }
 }

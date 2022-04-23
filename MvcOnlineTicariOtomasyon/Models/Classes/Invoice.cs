@@ -26,7 +26,10 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string InvoiceTaxAdministration { get; set; }
-        public DateTime InvoiceHour { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string InvoiceHour { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -35,6 +38,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string InvoiceReciever { get; set; }
+
+        public decimal Total { get; set; }
 
         public ICollection<InvoiceItem> InvoiceItems { get; set; }
     }

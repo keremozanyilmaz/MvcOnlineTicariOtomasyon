@@ -1,0 +1,38 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Classes
+@model List<InvoiceItem>
+@{
+    ViewBag.Title = "InvoiceDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Departman Detay</h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Fatura Seri No: @ViewBag.i</li>
+</ol>
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.InvoiceID</td>
+            <td>@x.InvoiceItemsExplanation</td>
+            <td>@x.InvoiceItemsQuantity</td>
+            <td>@x.InvoiceItemsUnitPrice</td>
+            <td>@x.InvoiceItemsAmount</td>
+           
+        </tr>
+    }
+
+</table>
+<a href="/Invoice/NewItemtoInvoice/" class="btn btn-default" style="background-color:darksalmon">Yeni Kalem Girişi</a>
+
